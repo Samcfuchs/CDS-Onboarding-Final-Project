@@ -1,8 +1,8 @@
 //Write your javascript here!
-const height = 500;
+const height = 450;
 const width = 500;
 
-const height_viz = 500;
+const height_viz = 450;
 const wid_viz = 500;
 
 const data_file = "iris.csv"
