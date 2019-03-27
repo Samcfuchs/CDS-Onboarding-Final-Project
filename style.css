@@ -20,7 +20,7 @@ text {
 }
 
 span.equation {
-  font-family: 'Lucida Console', 'Courier New', Courier, monospace;
+  font-family: 'Inconsolata','Lucida Console', 'Courier New', Courier, monospace;
   font-size: 25px;
   margin-left: 30px;
   margin-right: 30px;
