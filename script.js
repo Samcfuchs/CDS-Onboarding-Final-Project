@@ -146,7 +146,9 @@ function drawLabels(svg) {
 function setEq(a,b) {
     a = round(a)
     b = round(b)
-    d3.select("#equation").text("y = " + String(a) + " + " + String(b) + "x")
+
+    d3.select("#a").text(String(a))
+    d3.select("#b").text(String(b))
 }
 
 function round(d) {
