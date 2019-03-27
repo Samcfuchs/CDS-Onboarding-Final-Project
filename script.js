@@ -174,6 +174,8 @@ isImported.then( function([d,m]) {
 
 n = -1
 function next() {
+    if (n == models.length - 1) return
+
     n++;
     row = models[n];
     drawModel(row)
