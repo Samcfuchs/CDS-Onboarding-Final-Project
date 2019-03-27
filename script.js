@@ -19,7 +19,7 @@ var color_scale = d3.scaleLinear();
 
 //Steps:
 //Make SVG
-var main = d3.select("body").append("svg")
+var main = d3.select("#content").append("svg")
     .attr("width", width)
     .attr("height", height)
     .attr("id", "main");
@@ -41,7 +41,7 @@ main.line = main.append("line")
 var xValue = function(d) { return +d[main.xlabel]; }
 var yValue = function(d) { return +d[main.ylabel]; }
 
-var viz = d3.select("body").append("svg")
+var viz = d3.select("#content").append("svg")
     .attr("width", wid_viz)
     .attr("height", height_viz)
     .attr("id", "viz");
@@ -114,12 +114,11 @@ function drawModel(row) {
     var s = colorize(score(row));
 
     // Draw the actual point
-    // TODO: add color
     var point = viz.append("circle");
     row.point = point
     point.attr("cx", x)
         .attr("cy", y)
-        .attr("r", pointRadius)
+        .attr("r", 7)
         .attr("fill", s)
         .attr("stroke", "black")
         .attr("stroke-width", 2)

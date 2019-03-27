@@ -6,9 +6,13 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#content {
+  margin:auto;
+  width: 1000px;
+}
+
 svg {
   background-color: #eee;
-  margin:10px;
 }
 
 text {
@@ -16,7 +20,7 @@ text {
 }
 
 div#controls {
-  margin: 10px;
+  margin-bottom:20px;
 }
 
 .button {

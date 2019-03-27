@@ -12,12 +12,23 @@
 </head>
 
 <body>
-    <h1>Gaze Into the Iris</h1>
-    <div id="controls">
-        <button class="button" onclick="prev()"><</button>
-        <button class="button" onclick="next()">></button>
+    <div id="content">
+        <h1>Gaze Into the Iris</h1>
+        <p>
+            Use the arrow keys to navigate through the epochs of gradient
+            descent, eventually converging on the final, optimized model. On the
+            left is plotted the original dataset, with the current regression
+            model shown in red. On the right, each model is shown plotted by its
+            a and b coefficients (of the form a + bx), and colored by the mean
+            squared error of the model, which we use as the loss function of the
+            gradient descent.
+        </p>
+        <div id="controls">
+            <button class="button" onclick="prev()"><</button>
+            <button class="button" onclick="next()">></button>
             <!--<button class="button" onclick="all()">ALL</button>-->
+        </div>
+        <script src="script.js"></script>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
