@@ -176,7 +176,6 @@ n = -1
 function next() {
     n++;
     row = models[n];
-    abline(intercept(row), slope(row));
     drawModel(row)
     console.log(n);
 }
@@ -186,7 +185,6 @@ function prev() {
 
     n--;
     row = models[n];
-    abline(intercept(row), slope(row));
     drawModel(row)
     console.log(n);
 }
