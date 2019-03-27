@@ -121,6 +121,8 @@ function drawModel(row) {
         .attr("cy", y)
         .attr("r", pointRadius)
         .attr("fill", s)
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
         .attr("class", "point");
     
     abline(slope(row), intercept(row))
@@ -176,6 +178,9 @@ n = -1
 function next() {
     if (n == models.length - 1) return
 
+    try { models[Math.max(n,0)].point.attr("stroke-width", 0); }
+    catch {}
+
     n++;
     row = models[n];
     drawModel(row)
@@ -184,6 +189,9 @@ function next() {
 
 function prev() {
     if (n == 0) return
+
+    try { models[n].point.attr("stroke-width", 0); }
+    catch {}
 
     n--;
     row = models[n];
