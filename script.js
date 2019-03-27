@@ -6,7 +6,7 @@ const height_viz = 500;
 const wid_viz = 500;
 
 const data_file = "iris.csv"
-const models_file = "models.csv"
+const models_file = "dummy.csv"
 
 const pointRadius = 5;
 const pointAlpha = 0.75;
@@ -28,8 +28,8 @@ main.height = height
 main.width = width
 main.margin = {top: 50, right: 50, left: 75, bottom: 75};
 
-main.xlabel = "sepal_len"
-main.ylabel = "sepal_wid"
+main.xlabel = "SepalLengthCm"
+main.ylabel = "SepalWidthCm"
 
 main.x_scale = d3.scaleLinear().range([main.margin.left, width-main.margin.right]);
 main.y_scale = d3.scaleLinear().range([height-main.margin.bottom, main.margin.top]);
