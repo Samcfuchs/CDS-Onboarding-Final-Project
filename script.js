@@ -143,6 +143,16 @@ function drawLabels(svg) {
         .attr("class", "axislabel");
 }
 
+function setEq(a,b) {
+    a = round(a)
+    b = round(b)
+    d3.select("#equation").text("y = " + String(a) + " + " + String(b) + "x")
+}
+
+function round(d) {
+    return Number(Math.round(d+'e'+3)+'e-'+3);
+}
+
 drawLabels(main);
 drawLabels(viz);
 
@@ -182,7 +192,8 @@ function next() {
 
     n++;
     row = models[n];
-    drawModel(row)
+    drawModel(row);
+    setEq(intercept(row), slope(row));
     console.log(n);
 }
 
@@ -194,7 +205,8 @@ function prev() {
 
     n--;
     row = models[n];
-    drawModel(row)
+    drawModel(row);
+    setEq(intercept(row), slope(row));
     console.log(n);
 }
 
