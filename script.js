@@ -120,7 +120,6 @@ function drawModel(row) {
     point.attr("cx", x)
         .attr("cy", y)
         .attr("r", pointRadius)
-        .attr("fill-opacity", pointAlpha)
         .attr("fill", s)
         .attr("class", "point");
     
