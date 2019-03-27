@@ -19,6 +19,13 @@ text {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#equation {
+  font-family: 'Lucida Console', 'Courier New', Courier, monospace;
+  font-size: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
 div#controls {
   margin-bottom:20px;
 }
