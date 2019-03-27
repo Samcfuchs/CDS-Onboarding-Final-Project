@@ -41,7 +41,7 @@ div#controls {
   margin-bottom:20px;
 }
 
-.button {
+button {
   border: none;
   color: white;
   cursor: pointer;
@@ -52,6 +52,16 @@ div#controls {
   height: 50px;
   width: 50px;
   border-radius: 10px;
+  font-family: monospace
+}
+
+button:disabled {
+  background-color: #627fa0;
+  cursor: auto;
+}
+
+#clear {
+  background-color: rgb(223, 71, 71)
 }
 
 .button:focus {

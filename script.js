@@ -103,6 +103,7 @@ function abline(a,b) {
         .attr("y1", main.y_scale(a))
         .attr("x2", x2)
         .attr("y2", y2)
+        .attr("opacity", 1);
     
     return main.line;
 }
@@ -122,7 +123,7 @@ function drawModel(row) {
         .attr("fill", s)
         .attr("stroke", "black")
         .attr("stroke-width", 2)
-        .attr("class", "point");
+        .attr("class", "model-point");
     
     abline(slope(row), intercept(row))
 }
@@ -185,9 +186,19 @@ isImported.then( function([d,m]) {
     drawAxes(viz);
 
     drawAllPoints(data);
+    btnDisable(-1)
 });
 
 n = -1
+function btnDisable(n) {
+    d3.select("#next").attr("disabled", null);
+    d3.select("#prev").attr("disabled", null);
+
+    if (n < 1) d3.select("#prev").attr("disabled", true);
+
+    if (n >= models.length - 1) d3.select("#next").attr("disabled", true);
+}
+
 function next() {
     if (n == models.length - 1) return
 
@@ -198,6 +209,7 @@ function next() {
     row = models[n];
     drawModel(row);
     setEq(row);
+    btnDisable(n)
     console.log(n);
 }
 
@@ -211,7 +223,15 @@ function prev() {
     row = models[n];
     drawModel(row);
     setEq(row);
+    btnDisable(n)
     console.log(n);
+}
+
+function clr() {
+    n = -1;
+    d3.selectAll(".model-point").remove();
+    main.line.attr("opacity", 0);
+    btnDisable(n)
 }
 
 function all() {
