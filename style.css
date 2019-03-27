@@ -26,7 +26,7 @@ span.equation {
   margin-right: 30px;
 }
 
-#a, #b {
+#a, #b, #mse {
   background-color: #eee;
   width: 100px;
   height: 50px;
