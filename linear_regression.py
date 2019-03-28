@@ -21,7 +21,7 @@ learning_rate = 0.005
 
 # clear output file
 with open('data.csv', mode = 'w') as f:
-    f.write('a,b,MSE,rSq\n')
+    f.write('a,b,MSE\n')
 
 # run gradient descent
 with open('data.csv', mode = 'a') as f:
