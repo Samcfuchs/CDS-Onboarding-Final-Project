@@ -16,7 +16,7 @@ n = min(np.size(X_data), np.size(Y_data))
 
 # initialize weights and set hyperparameters
 a, b = 0, 0
-iterations = 2000
+iterations = 20
 learning_rate = 0.005
 
 # clear output file
@@ -36,6 +36,8 @@ with open('data.csv', mode = 'a') as f:
 
         # calculate cost
         MSE = (sum(Y_data - (a * X_data + b)) ** 2) / n
+
+        print(a, b, MSE)
 
         # write data to file
         line = ','.join([str(b), str(a), str(MSE)]) + '\n'
