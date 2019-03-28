@@ -11,6 +11,19 @@ body {
   width: 1000px;
 }
 
+#sub {
+  font-size: 16px;
+  color: #888;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-weight: unset;
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom:0;
+}
+
 svg {
   background-color: #eee;
 }
