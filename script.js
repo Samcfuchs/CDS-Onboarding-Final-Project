@@ -6,7 +6,7 @@ const height_viz = 450;
 const wid_viz = 500;
 
 const data_file = "iris.csv"
-const models_file = "dummy.csv"
+const models_file = "data.csv"
 
 const pointRadius = 5;
 const pointAlpha = 0.75;
