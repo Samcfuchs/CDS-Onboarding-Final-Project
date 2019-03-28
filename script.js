@@ -215,11 +215,13 @@ function next() {
     drawModel(row);
     setEq(row);
     btnDisable(n)
+    d3.select("#n").text(n);
     console.log(n);
 }
 
 function prev() {
     if (n == 0) return
+    pause();
 
     try { models[n].point.attr("stroke-width", 0); }
     catch {}
@@ -229,6 +231,7 @@ function prev() {
     drawModel(row);
     setEq(row);
     btnDisable(n)
+    d3.select("#n").text(n);
     console.log(n);
 }
 

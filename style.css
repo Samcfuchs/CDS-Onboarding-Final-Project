@@ -52,6 +52,12 @@ span.equation {
 
 #mse { width: 150px; }
 
+#n { 
+  width: 50px; 
+  display: inline-block;
+  text-align: center;
+}
+
 div#controls {
   margin-bottom:20px;
 }
