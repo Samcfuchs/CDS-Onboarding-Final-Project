@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
 FILENAME = "newiris.csv"
-HEADERS = "a" ,"b" 
+HEADERS = ['a','b','c','d','class'] 
 
 df = pd.read_csv(FILENAME, names=HEADERS)
 
