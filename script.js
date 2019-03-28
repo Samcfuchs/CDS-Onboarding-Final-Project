@@ -96,8 +96,11 @@ function colorize(n) {
 
 // Draw the a + bx line on the main plot
 function abline(a,b) {
-    x2 = main.x_scale.range()[1]
-    y2 = a + b * x2
+    real_x2 = main.x_scale.domain()[1];
+    real_y2 = a + b * real_x2;
+
+    x2 = main.x_scale(real_x2);
+    y2 = main.y_scale(real_y2);
 
     main.line.attr("x1", main.x_scale(0))
         .attr("y1", main.y_scale(a))
