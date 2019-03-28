@@ -128,7 +128,7 @@ function drawModel(row) {
         .attr("stroke-width", 2)
         .attr("class", "model-point");
     
-    abline(slope(row), intercept(row))
+    abline(intercept(row), slope(row));
 }
 
 // Draw all the points in the dataset
