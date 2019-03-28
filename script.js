@@ -64,12 +64,12 @@ function drawAxes(svg) {
     // Making axes & labels
     svg.append("g")
         .call(d3.axisBottom(svg.x_scale))
-        .attr("transform", `translate(0, ${svg.y_scale(0)})`)
+        .attr("transform", `translate(0, ${svg.y_scale.range()[0]})`)
         .attr("class", "axis");
 
     svg.append("g")
         .call(d3.axisLeft(svg.y_scale))
-        .attr("transform", `translate(${svg.x_scale(0)},0)`)
+        .attr("transform", `translate(${svg.x_scale.range()[0]},0)`)
         .attr("class", "axis");
 }
 
