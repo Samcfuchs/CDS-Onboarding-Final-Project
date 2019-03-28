@@ -168,16 +168,16 @@ isImported.then( function([d,m]) {
     data = d;
     models = m;
 
-    main.x_scale.domain([ 0, 1.10 * d3.max(data,xValue)]);
-    main.y_scale.domain([ 0, 1.10 * d3.max(data,yValue)]);
+    main.x_scale.domain([ 0, d3.max(data,xValue)]);
+    main.y_scale.domain([ 0, d3.max(data,yValue)]);
 
     viz.x_scale.domain([
-        1.10 * d3.min(models, slope), 
-        1.10 * d3.max(models, slope)
+        d3.min(models, slope), 
+        d3.max(models, slope)
     ]);
     viz.y_scale.domain([
-        1.10 * d3.min(models, intercept), 
-        1.10 * d3.max(models, intercept)
+        d3.min(models, intercept), 
+        d3.max(models, intercept)
     ]);
 
     color_scale.domain([d3.min(models, score), d3.max(models,score)]);
