@@ -37,6 +37,8 @@ span.equation {
   border-radius: 10px;
 }
 
+#mse { width: 150px; }
+
 div#controls {
   margin-bottom:20px;
 }

@@ -5,7 +5,7 @@ const width = 500;
 const height_viz = 450;
 const wid_viz = 500;
 
-const data_file = "iris.csv"
+const data_file = "kc_house_data.csv"
 const models_file = "data.csv"
 
 const pointRadius = 5;
@@ -28,8 +28,8 @@ main.height = height
 main.width = width
 main.margin = {top: 50, right: 50, left: 75, bottom: 75};
 
-main.xlabel = "SepalLengthCm"
-main.ylabel = "SepalWidthCm"
+main.xlabel = "sqft_living"
+main.ylabel = "price"
 
 main.x_scale = d3.scaleLinear().range([main.margin.left, width-main.margin.right]);
 main.y_scale = d3.scaleLinear().range([height-main.margin.bottom, main.margin.top]);
@@ -38,8 +38,8 @@ main.line = main.append("line")
     .attr("stroke-width", 1)
     .attr("stroke", "red"); 
 
-var xValue = function(d) { return +d[main.xlabel]; }
-var yValue = function(d) { return +d[main.ylabel]; }
+var xValue = function(d) { return +d[main.xlabel] / 1000; }
+var yValue = function(d) { return +d[main.ylabel] / 1000; }
 
 var viz = d3.select("#content").append("svg")
     .attr("width", wid_viz)
@@ -169,6 +169,7 @@ isImported = Promise.all([d3.csv(data_file), d3.csv(models_file)]);
 
 isImported.then( function([d,m]) {
     data = d;
+
     models = m;
 
     main.x_scale.domain([ 0, d3.max(data,xValue)]);
@@ -193,6 +194,7 @@ isImported.then( function([d,m]) {
 });
 
 n = -1
+var r;
 function btnDisable(n) {
     d3.select("#next").attr("disabled", null);
     d3.select("#prev").attr("disabled", null);
@@ -230,7 +232,16 @@ function prev() {
     console.log(n);
 }
 
+function fast() {
+    r = window.setInterval(next, 15);
+}
+
+function pause() {
+    clearInterval(r);
+}
+
 function clr() {
+    pause();
     n = -1;
     d3.selectAll(".model-point").remove();
     main.line.attr("opacity", 0);
