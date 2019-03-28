@@ -26,17 +26,22 @@ with open('data.csv', mode = 'w') as f:
 # run gradient descent
 with open('data.csv', mode = 'a') as f:
     for i in range(iterations):
+
+        pred = a + b * X_data
+        errors = Y_data - pred
+
+        # calculate cost
+        errorsSq = np.square(errors)
+        MSE = errorsSq.mean()
+
+        # write data to file
+        line = ','.join([str(a), str(b), str(MSE)]) + '\n'
+        f.write(line)
+
         # calculate gradients
-        a_gradient = (sum(-2 * X_data * (Y_data - (a * X_data + b)))) / n
-        b_gradient = (sum(-2 * (Y_data - (a * X_data + b)))) / n
+        a_gradient = (-2/n) * sum(errors)
+        b_gradient = (-2/n) * sum(X * errors)
 
         # update weights
         a -= a_gradient * learning_rate
         b -= b_gradient * learning_rate
-
-        # calculate cost
-        MSE = (sum(Y_data - (a * X_data + b)) ** 2) / n
-
-        # write data to file
-        line = ','.join([str(b), str(a), str(MSE)]) + '\n'
-        f.write(line)
